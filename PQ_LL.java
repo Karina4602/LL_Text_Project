@@ -292,40 +292,6 @@ public class PQ_LL {
             return x;
         }
 
-//
-//    public void add(Request _new) {
-//        if (head == null) {
-//            _new.next = head;
-//            head = _new;
-//        } else {
-//            if (_new.priority > head.priority) {
-//                _new.next = head;
-//                head = _new;
-//            } else if (_new.priority == head.priority) {
-//                if (_new.arrivalTime > head.arrivalTime) {
-//                    _new.next = head;
-//                    head = _new;
-//                }
-//            } else {
-//                Request walker;
-//                Request PrevReq = null;
-//                for (walker = head; walker != null; walker = walker.next) {
-//                    if (_new.priority > walker.priority) {
-//                        PrevReq.next = _new;
-//                        _new.next = walker;
-//                        return;
-//                    } else if (_new.priority == walker.priority) {
-//                        if (_new.arrivalTime > walker.arrivalTime) {
-//                            PrevReq.next = _new;
-//                            _new.next = walker;
-//                        }
-//                    }
-//                    PrevReq = walker;
-//                }
-//                PrevReq.next = _new;
-//            }
-//        }
-//    }
 
 
     }
