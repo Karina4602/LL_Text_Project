@@ -35,6 +35,9 @@ public class node {
         Priority = priority;
     }
 
+
+
+
     public void print(){
         System.out.println("ID: " + ID +", Arrival Time: " + arrivalTime + ", Priority" + Priority);
     }

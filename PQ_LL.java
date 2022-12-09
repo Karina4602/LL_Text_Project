@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class PQ_LL {
@@ -21,6 +22,50 @@ public class PQ_LL {
         }
     }
 
+    //TODO FIX
+    void sortedAdd(node _new) {
+        _new.print();
+        node walker;
+        if (head == null || head.getPriority() <= _new.getPriority()) {
+
+            //checks if prios are equal
+            if (head != null && head.getPriority().equals(_new.getPriority()) ){
+                System.out.println("TEST");
+
+                //if priors are equal compares AT. if _new AT is smaller switch
+                if (head.getArrivalTime() > _new.getArrivalTime()){
+                    System.out.println("b");
+                    _new.next = head;
+                    head = _new;
+                }
+                else {
+                    head.next = _new;
+                }
+            }
+            else {
+                _new.next = head;
+                head = _new;
+            }
+        }
+        else {
+            walker = head;
+            while (walker.next != null && walker.next.getPriority() > _new.getPriority()) {
+                    walker = walker.next;
+            }
+            _new.next = walker.next;
+            walker.next = _new;
+        }
+
+    }
+
+    boolean compare(node x, node y){
+        //works
+        double a = x.getPriority();
+        System.out.println(a);
+        double b = y.getPriority();
+        System.out.println(b);
+        return a == b;
+    }
 
 
     public int getindex(String ID){

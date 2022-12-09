@@ -72,9 +72,10 @@ public class Main {
             Double Priority = Double.parseDouble(tokenTemp[2]);
 
             _new = new node(ID, AT, Priority);
-            LL.add(_new);
+            //_new.print();
+            LL.sortedAdd(_new);
             tempNum = 0;
-            LL.sort();
+            //LL.sort();
 
         }
 
@@ -149,8 +150,8 @@ public class Main {
                     double tempPri= sc.nextDouble();
                     sc.nextLine();
                     _new = new node(tempID, tempAT, tempPri);
-                    LL.add(_new);
-                    LL.sort();
+                    LL.sortedAdd(_new);
+                    //LL.sort();
                     break;
 
                 case 3:
