@@ -1,0 +1,6 @@
+5
+aaa 3 0.7
+Toto 4 0.7
+Apple 110 0.5
+bop 3 0.5
+Tota 4 0.6
