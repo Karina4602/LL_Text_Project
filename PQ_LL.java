@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.StringTokenizer;
 
 public class PQ_LL {
@@ -22,19 +21,16 @@ public class PQ_LL {
         }
     }
 
-    //TODO FIX
+
     void sortedAdd(node _new) {
-        _new.print();
         node walker;
         if (head == null || head.getPriority() <= _new.getPriority()) {
 
             //checks if prios are equal
             if (head != null && head.getPriority().equals(_new.getPriority()) ){
-                System.out.println("TEST");
 
                 //if priors are equal compares AT. if _new AT is smaller switch
                 if (head.getArrivalTime() > _new.getArrivalTime()){
-                    System.out.println("b");
                     _new.next = head;
                     head = _new;
                 }
@@ -58,14 +54,7 @@ public class PQ_LL {
 
     }
 
-    boolean compare(node x, node y){
-        //works
-        double a = x.getPriority();
-        System.out.println(a);
-        double b = y.getPriority();
-        System.out.println(b);
-        return a == b;
-    }
+
 
 
     public int getindex(String ID){
@@ -73,14 +62,12 @@ public class PQ_LL {
         int fin = 0;
 
         //int fin = 0;
-        boolean x = false;
         for (walker = head; walker != null; walker = walker.next) {
             if (walker.getID().equals(ID)) {
                 break;
             }
 
         }
-        //TODO INDEX CODE
         for ( int i =0; i < getlength(); i++){
             if (getNode(i) == walker){
                 fin = i;
@@ -135,8 +122,7 @@ public class PQ_LL {
          long tempAT = temp.getArrivalTime();
          remove(getindex(tempID));
         node _new = new node(tempID,tempAT,tempPri );
-        add(_new);
-        sort();
+        sortedAdd(_new);
 
 
 
@@ -157,8 +143,7 @@ public class PQ_LL {
         }
 
     }
-    //TODO CHECK
-    //
+
     public void deleteRequest(){
 
         int i = 0;
@@ -213,7 +198,7 @@ public class PQ_LL {
 
 
 
-        //THIS ONE ACTUALLY WORKS WTH
+        //Old sorting method, not to be used unefficent
         public void sort(){
         //inefficient and generally bad but hey it works
         //Sort by converting node to array and back to node
